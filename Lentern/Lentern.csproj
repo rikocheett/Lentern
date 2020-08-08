@@ -80,6 +80,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Page\AddIntern.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -88,6 +89,13 @@
     <Compile Include="Model\Intern.cs" />
     <Compile Include="Model\LenternContext.cs" />
     <Compile Include="Owner.cs" />
+    <Compile Include="Page\AddIntern.aspx.cs">
+      <DependentUpon>AddIntern.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\AddIntern.aspx.designer.cs">
+      <DependentUpon>AddIntern.aspx</DependentUpon>
+    </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
