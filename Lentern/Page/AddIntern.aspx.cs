@@ -28,8 +28,6 @@ namespace Lentern.Page
 
         protected void AddIntern_Click(object sender, EventArgs e)
         {
-
-
             String name = Name.Text;
             String universityName = UniversityName.Text;
             String cours = Cours.Text;
@@ -75,7 +73,8 @@ namespace Lentern.Page
                         CreateDate = time,
                         EditDate = time,
                         CreateName = createName,
-                        EditName = createName
+                        EditName = createName,
+                        Approve = false
                     };
                     db.Interns.Add(i);
                     db.SaveChanges();
