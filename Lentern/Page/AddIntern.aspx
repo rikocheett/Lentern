@@ -18,6 +18,7 @@
 
         header {
             width: 100%;
+            height: 70px;
             background: #80A6FF;
         }
 
@@ -33,9 +34,10 @@
                 vertical-align: top; /* Выравниaвание по верхнему краю */
             }
 
-                td.rightcol { /* Правая ячейка */
-                    text-align: right; /* Выравнивание по правому краю */
-                }
+        td.rightcol { /* Правая ячейка */
+            position: relative;
+            left: 700px;
+        }
 
         .reg {
             margin: auto;
@@ -63,30 +65,35 @@
 </head>
 <body>
     <form runat="server" method="post">
-    <header>
-        <table class="text">
-            <tr>
-                <td>Lentern</td>
-                <td runat="server" class="rightcol"><asp:textbox runat="server" type="text" ID="User">Добавление нового стажера</asp:textbox></td>
-            </tr>
-        </table>
-    </header>    
+        <header>
+            <table class="text">
+                <tr>
+                    <td>
+                        <p>Lentern</p>
+                    </td>
+                    <td class="rightcol">
+                        <p>Добавление нового стажера</p>
+                        <asp:TextBox runat="server" type="text" ID="User" Width="130px" ReadOnly="True"></asp:TextBox>
+                    </td>
+                </tr>
+            </table>
+        </header>
         <div class="reg">
             <p>Заполните все данные:</p>
-            <asp:textbox runat="server" id="Name" placeholder="ФИО*" />
-            <asp:textbox runat="server" id="UniversityName" placeholder="Название ВУЗА" />
-            <asp:textbox runat="server" id="Cours" placeholder="Курс (цифрой)" />
-            <asp:textbox runat="server" id="Faculty" placeholder="Факультет" />
-            <asp:textbox runat="server" id="Phone" placeholder="Контактный телефон*" />
-            <asp:textbox runat="server" id="Email" placeholder="Почта*" />
-            <asp:textbox runat="server" id="About" placeholder="О себе" />
+            <asp:TextBox runat="server" ID="Name" placeholder="ФИО*" />
+            <asp:TextBox runat="server" ID="UniversityName" placeholder="Название ВУЗА" />
+            <asp:TextBox runat="server" ID="Cours" placeholder="Курс (цифрой)" />
+            <asp:TextBox runat="server" ID="Faculty" placeholder="Факультет" />
+            <asp:TextBox runat="server" ID="Phone" placeholder="Контактный телефон*" />
+            <asp:TextBox runat="server" ID="Email" placeholder="Почта*" />
+            <asp:TextBox runat="server" ID="About" placeholder="О себе" />
             <p>Дата рождения*:</p>
-            <asp:textbox runat="server" class="DateClass1" id="Day" placeholder="ДД" />
-            <asp:textbox runat="server" class="DateClass1" id="Month" placeholder="ММ" />
-            <asp:textbox runat="server" class="DateClass2" id="Year" placeholder="ГГГГ" />
+            <asp:TextBox runat="server" class="DateClass1" ID="Day" placeholder="ДД" />
+            <asp:TextBox runat="server" class="DateClass1" ID="Month" placeholder="ММ" />
+            <asp:TextBox runat="server" class="DateClass2" ID="Year" placeholder="ГГГГ" />
             <br />
             <br />
-            <asp:button runat="server" name="AddInt" id="AddInt" text="Отправить!" OnClick="AddIntern_Click"/>
+            <asp:Button runat="server" name="AddInt" ID="AddInt" Text="Отправить!" OnClick="AddIntern_Click" />
         </div>
     </form>
 </body>

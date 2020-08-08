@@ -18,7 +18,11 @@ namespace Lentern.Page
             {
                 Encoding enc = new Encoding();
                 string user = enc.decode(userurl);
-                User.Text = "Добавление нового стажера<br/>" + user;
+                User.Text = user;
+            }
+            else 
+            {
+                User.Text = "Новый пользователь";
             }
         }
 
