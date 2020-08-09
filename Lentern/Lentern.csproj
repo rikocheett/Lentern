@@ -84,6 +84,7 @@
     <Content Include="Page\AddIntern.aspx" />
     <Content Include="Page\Default.aspx" />
     <Content Include="Page\Main.aspx" />
+    <Content Include="Page\ReIntern.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -119,6 +120,13 @@
     </Compile>
     <Compile Include="Page\Main.aspx.designer.cs">
       <DependentUpon>Main.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\ReIntern.aspx.cs">
+      <DependentUpon>ReIntern.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\ReIntern.aspx.designer.cs">
+      <DependentUpon>ReIntern.aspx</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

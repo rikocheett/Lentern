@@ -59,7 +59,8 @@ namespace Lentern.Page
 
         protected void EditIntern_Click(object sender, EventArgs e)
         {
-            
+            string userurl = Request.QueryString["User"];
+            Response.Redirect("ReIntern.aspx?User=" + userurl);
         }
 
         protected void AddAdmin_Click(object sender, EventArgs e)
