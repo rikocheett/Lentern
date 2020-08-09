@@ -70,7 +70,7 @@
             margin: auto;
             padding: 10px;
         }
-        .FuckinckButtons {
+        .SharpButtons {
             margin: 0;
             padding: 0;
             position: relative;
@@ -97,10 +97,10 @@
             <table class="button">
                 <tr>
                     <td>
-                        <asp:Button runat="server" name="AddInt" ID="AddInt" Text="Новый стажер!" OnClick="AddInt_Click" CssClass="FuckinckButtons"/>
+                        <asp:Button runat="server" name="AddInt" ID="AddInt" Text="Новый стажер!" OnClick="AddInt_Click" CssClass="SharpButtons"/>
                     </td>
                     <td class="rightcol">
-                        <asp:Button runat="server" name="Exit" ID="Exit" Text="Вход!" OnClick="Exit_Click" CssClass="FuckinckButtons"/>
+                        <asp:Button runat="server" name="Exit" ID="Exit" Text="Вход!" OnClick="Exit_Click" CssClass="SharpButtons"/>
                     </td>
                 </tr>
             </table>

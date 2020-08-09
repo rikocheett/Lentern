@@ -65,7 +65,7 @@ namespace Lentern.Page
             }
             else 
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Непрвильно выполненный вход!')", true);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Неправильно выполненный вход!')", true);
             }
         }
     }

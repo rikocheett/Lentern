@@ -14,15 +14,24 @@ namespace Lentern.Page
         {
             Owner own = new Owner();
             string userurl = Request.QueryString["User"];
+            bool admin = false;
             if (!String.IsNullOrEmpty(userurl))
             {
                 Encoding enc = new Encoding();
                 string user = enc.decode(userurl);
                 User.Text = user;
+                using (LenternContext db = new LenternContext())
+                {
+                    foreach (var a in db.Accs)
+                    {
+                        if (a.Login == user) admin = true;
+                    }
+                }
+                if (!admin) Response.Redirect("Default.aspx");
             }
             else
             {
-                User.Text = "Новый пользователь";
+                Response.Redirect("Default.aspx");
             }
         }
 
@@ -30,12 +39,24 @@ namespace Lentern.Page
         {
             String login = Login.Text;
             String password = Password.Text;
+            bool repeatlogin = false;
+            using (LenternContext db = new LenternContext())
+            {
+                foreach (var a in db.Accs)
+                {
+                    if (a.Login == login) repeatlogin = true;
+                }
+            }
 
             if (String.IsNullOrEmpty(login) && String.IsNullOrEmpty(password))
             {
                 ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Введите все данные!')", true);
             }
-            else 
+            else if (repeatlogin) 
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Администратор с таким логином уже есть')", true);
+            }
+            else
             {
                 Acc a = new Acc
                 {
@@ -44,13 +65,19 @@ namespace Lentern.Page
                     Owner = false,
                     Admin = true
                 };
-                using (LenternContext db = new LenternContext()) 
+                using (LenternContext db = new LenternContext())
                 {
                     db.Accs.Add(a);
                     db.SaveChanges();
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Администратор добавлен!')", true);
                 }
             }
+        }
+
+        protected void Home_Click(object sender, EventArgs e)
+        {
+            string userurl = Request.QueryString["User"];
+            Response.Redirect("Main.aspx?User=" + userurl);
         }
     }
 }

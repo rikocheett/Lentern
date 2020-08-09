@@ -69,6 +69,7 @@
                 <tr>
                     <td>
                         <p>Lentern - Новый админинистратор</p>
+                        <asp:Button runat="server" name="Home" ID="Home" Text="Домой" OnClick="Home_Click" />
                     </td>
                     <td class="rightcol">
                         <asp:TextBox runat="server" type="text" ID="User" Width="130px" ReadOnly="True"></asp:TextBox>

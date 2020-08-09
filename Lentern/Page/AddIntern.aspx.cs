@@ -14,24 +14,15 @@ namespace Lentern.Page
         {
             Owner own = new Owner();
             string userurl = Request.QueryString["User"];
-            bool admin = false;
             if (!String.IsNullOrEmpty(userurl))
             {
                 Encoding enc = new Encoding();
                 string user = enc.decode(userurl);
                 User.Text = user;
-                using (LenternContext db = new LenternContext()) 
-                {
-                    foreach (var a in db.Accs) 
-                    {
-                        if (a.Login == user) admin = true;
-                    }
-                }
-                if (!admin) Response.Redirect("Default.aspx");
             }
-            else 
+            else
             {
-                Response.Redirect("Default.aspx");
+                User.Text = "Новый пользователь";
             }
         }
 
@@ -47,12 +38,24 @@ namespace Lentern.Page
             String day = Day.Text;
             String month = Month.Text;
             String year = Year.Text;
+            bool repeatlogin = false;
+            using (LenternContext db = new LenternContext()) 
+            {
+                foreach (var i in db.Interns) 
+                {
+                    if (i.Email == email) repeatlogin = true;
+                }
+            }
 
             if (String.IsNullOrEmpty(name) && String.IsNullOrEmpty(phone) && String.IsNullOrEmpty(email) && String.IsNullOrEmpty(day) &&
                 String.IsNullOrEmpty(month) && String.IsNullOrEmpty(year) && Int32.TryParse(cours, out int a) && Int32.TryParse(day, out int u) &&
                 Int32.TryParse(month, out int b) && Int32.TryParse(year, out int c))
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Введите все обязательные поля! Либо поля с цифровым значением введины некоректно!')", true);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Введите все обязательные поля! Либо поля с цифровым значением введены некорректно!')", true);
+            }
+            else if (repeatlogin) 
+            {
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Пользователь с таким Email уже существует')", true);
             }
             else
             {
@@ -88,8 +91,15 @@ namespace Lentern.Page
                     db.Interns.Add(i);
                     db.SaveChanges();
                     ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Запись стажера добавлена!')", true);
+                    Response.Redirect("Default.aspx");
                 }
             }
+        }
+
+        protected void Home_Click(object sender, EventArgs e)
+        {
+            string userurl = Request.QueryString["User"];
+            Response.Redirect("Main.aspx?User=" + userurl);
         }
     }
 }

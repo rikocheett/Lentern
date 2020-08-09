@@ -62,7 +62,7 @@ namespace Lentern.Page
                 String.IsNullOrEmpty(month) && String.IsNullOrEmpty(year) && Int32.TryParse(cours, out int a) && Int32.TryParse(day, out int u) &&
                 Int32.TryParse(month, out int b) && Int32.TryParse(year, out int c))
             {
-                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Введите все обязательные поля! Либо поля с цифровым значением введины некоректно!')", true);
+                ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Введите все обязательные поля! Либо поля с цифровым значением введены некорректно!')", true);
             }
             else
             {
@@ -120,6 +120,12 @@ namespace Lentern.Page
                 }
             }
             if (!flag) ScriptManager.RegisterClientScriptBlock(this, this.GetType(), "alertMessage", "alert('Данный пользователь не найден')", true);
+        }
+
+        protected void Home_Click(object sender, EventArgs e)
+        {
+            string userurl = Request.QueryString["User"];
+            Response.Redirect("Main.aspx?User=" + userurl);
         }
     }
 }

@@ -76,8 +76,7 @@ namespace Lentern.Page
         protected string ShowTable() 
         {
             Encoding enc = new Encoding();
-            //string userurl = Request.QueryString["User"];
-            string userurl = enc.encode("01.sasha.01@mail.ru");
+            string userurl = Request.QueryString["User"];
 
             bool adminUser = false;
             using (LenternContext db = new LenternContext())
