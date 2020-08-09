@@ -86,7 +86,6 @@
                 <tr>
                     <td><p>Lentern - Авторизация</p></td>
                     <td class="rightcol1">
-                        <asp:TextBox runat="server" type="text" ID="User" Width="130px" ReadOnly="True"></asp:TextBox>
                     </td>
                 </tr>
             </table>

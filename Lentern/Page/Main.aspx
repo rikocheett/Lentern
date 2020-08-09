@@ -80,11 +80,10 @@
             <table class="text">
                 <tr>
                     <td>
-                        <p>Lentern</p>
+                        <p>Lentern - главная страница</p>
                     </td>
                     <td class="rightcol">
-                        <p>Добавление нового стажера</p><br/>
-                         <asp:TextBox runat="server" type="text" ID="User" Width="130px" ReadOnly="True"></asp:TextBox>
+                         <br/><asp:TextBox runat="server" type="text" ID="User" Width="130px" ReadOnly="True"></asp:TextBox>
                     </td>
                 </tr>
             </table>

@@ -14,15 +14,24 @@ namespace Lentern.Page
         {
             Owner own = new Owner();
             string userurl = Request.QueryString["User"];
+            bool admin = false;
             if (!String.IsNullOrEmpty(userurl))
             {
                 Encoding enc = new Encoding();
                 string user = enc.decode(userurl);
                 User.Text = user;
+                using (LenternContext db = new LenternContext()) 
+                {
+                    foreach (var a in db.Accs) 
+                    {
+                        if (a.Login == user) admin = true;
+                    }
+                }
+                if (!admin) Response.Redirect("Default.aspx");
             }
             else 
             {
-                User.Text = "Новый пользователь";
+                Response.Redirect("Default.aspx");
             }
         }
 

@@ -47,7 +47,7 @@
             margin: auto;
             margin-top: 50px;
             width: 300px;
-            height: 400px;
+            height: 200px;
             border: 1px solid black;
             background: #D7D7D7;
         }
@@ -68,10 +68,9 @@
             <table class="text">
                 <tr>
                     <td>
-                        <p>Lentern</p>
+                        <p>Lentern - Новый админинистратор</p>
                     </td>
                     <td class="rightcol">
-                        <p>Новый админинистратор</p>
                         <asp:TextBox runat="server" type="text" ID="User" Width="130px" ReadOnly="True"></asp:TextBox>
                     </td>
                 </tr>
@@ -80,7 +79,6 @@
         <div class="reg">
             <p>Заполните все данные:</p>
             <asp:TextBox runat="server" ID="Login" placeholder="Логин" />
-            <p>Дата рождения:</p>
             <asp:TextBox runat="server" ID="Password" placeholder="Пароль" />
             <br />
             <br />

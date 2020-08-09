@@ -69,10 +69,9 @@
             <table class="text">
                 <tr>
                     <td>
-                        <p>Lentern</p>
+                        <p>Lentern - Добавление нового стажера</p>
                     </td>
                     <td class="rightcol">
-                        <p>Добавление нового стажера</p>
                         <asp:TextBox runat="server" type="text" ID="User" Width="130px" ReadOnly="True"></asp:TextBox>
                     </td>
                 </tr>

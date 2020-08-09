@@ -15,15 +15,6 @@ namespace Lentern.Page
     {
 
         /// <summary>
-        /// User элемент управления.
-        /// </summary>
-        /// <remarks>
-        /// Автоматически создаваемое поле.
-        /// Для изменения переместите объявление поля из файла конструктора в файл кода программной части.
-        /// </remarks>
-        protected global::System.Web.UI.WebControls.TextBox User;
-
-        /// <summary>
         /// Login элемент управления.
         /// </summary>
         /// <remarks>
