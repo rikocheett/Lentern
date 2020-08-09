@@ -15,8 +15,7 @@ namespace Lentern.Page
         {
             Owner own = new Owner();
             Encoding enc = new Encoding();
-            //string userurl = Request.QueryString["User"];
-            string userurl = enc.encode("Owner");
+            string userurl = Request.QueryString["User"];
             if (!String.IsNullOrEmpty(userurl))
             {
                 string user = enc.decode(userurl);
@@ -38,7 +37,7 @@ namespace Lentern.Page
                 }
                 else
                 {
-                    Response.Redirect("google.com");
+                    Response.Redirect("Default.aspx");
                 }
                 foreach (var Acc in db.Accs) 
                 {
@@ -54,28 +53,24 @@ namespace Lentern.Page
 
         protected void AddIternPage_Click(object sender, EventArgs e)
         {
-            //string userurl = Request.QueryString["User"];
-            Encoding enc = new Encoding();
-            string userurl = enc.encode("Owner");
+            string userurl = Request.QueryString["User"];
             Response.Redirect("AddIntern.aspx?User="+userurl);
         }
 
         protected void EditIntern_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         protected void AddAdmin_Click(object sender, EventArgs e)
         {
-            //string userurl = Request.QueryString["User"];
-            Encoding enc = new Encoding();
-            string userurl = enc.encode("Owner");
+            string userurl = Request.QueryString["User"];
             Response.Redirect("AddAdmin.aspx?User=" + userurl);
         }
 
         protected void Exit_Click(object sender, EventArgs e)
         {
-
+            Response.Redirect("Default.aspx");
         }
         protected string ShowTable() 
         {

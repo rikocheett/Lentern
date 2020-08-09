@@ -82,6 +82,7 @@
   <ItemGroup>
     <Content Include="Page\AddAdmin.aspx" />
     <Content Include="Page\AddIntern.aspx" />
+    <Content Include="Page\Default.aspx" />
     <Content Include="Page\Main.aspx" />
     <Content Include="Web.config" />
   </ItemGroup>
@@ -104,6 +105,13 @@
     </Compile>
     <Compile Include="Page\AddIntern.aspx.designer.cs">
       <DependentUpon>AddIntern.aspx</DependentUpon>
+    </Compile>
+    <Compile Include="Page\Default.aspx.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Page\Default.aspx.designer.cs">
+      <DependentUpon>Default.aspx</DependentUpon>
     </Compile>
     <Compile Include="Page\Main.aspx.cs">
       <DependentUpon>Main.aspx</DependentUpon>
