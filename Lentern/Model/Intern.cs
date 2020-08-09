@@ -1,4 +1,8 @@
-﻿using System;
+﻿/*
+ * Класс описывающий сущность БД, необходимы атрибуты и типы данных
+ */
+
+using System;
 
 namespace Lentern.Model
 {

@@ -1,4 +1,9 @@
-﻿using System;
+﻿/*
+ * Данный класс иннициализируется при загрузке каждой страницы сайта, и гарантирует, что всегда в базе данных
+ * будет хотя бы 1 пользователь с полными полями
+ */
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -8,11 +13,14 @@ namespace Lentern
 {
     public class Owner
     {
+        //Поля содержащии Логин и пароль
         private string OwnerLogin = "Owner";
         private string OwnerPassword = "Owner";
 
         public Owner() 
         {
+            //Перебераем все записи в таблице Acc, если нет ниодной записи с полными правами, то создаем ее
+            //С указанными выше логином и паролем
             using (LenternContext db = new LenternContext()) 
             {
                 var selectOwner = from acc in db.Accs
