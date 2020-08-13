@@ -1,6 +1,7 @@
 # Lentern
 ## Тестовое задание на вакансию "Стажер на корпоративные WEB-решения" в компанию Лента
 https://docs.google.com/document/d/1vhmjB0q5zwZYTVD-weddsJ2AvHPSolC1LaJFOCFgU_M/edit?usp=sharing
+
 Для решения тестового задания я решил выбрать следующие технологии:
    * ASP.NET WebForms
    * Entity Framework
