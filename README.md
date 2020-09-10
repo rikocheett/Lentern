@@ -19,6 +19,7 @@ https://docs.google.com/document/d/1vhmjB0q5zwZYTVD-weddsJ2AvHPSolC1LaJFOCFgU_M/
    - Password, str
    - Owner, bool
    - Admin, bool
+   
 Сущность Intern представляет из себя запись стажера и содержит следующие атрибуты:
    - IdIntern, int
    - Name, str
